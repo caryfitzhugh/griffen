@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <h2>Griffin</h2>
+    <div id="app">
+    </div>
+    <script src="js/compiled/griffin.js" type="text/javascript"></script>
+    <script>
+/*
+  class="slide list-group-item"
+  id="slide_264"
+  data-id="264"
+  data-file_name="634949703850624651.cif"
+  data-image_filename="634949703850624651.cif"
+  data-auth_key="8727c2310835f27e96719fb80788898a029228cc7eabd7b6fdca0a3929629339"
+  data-pyramid_levels="9"
+  data-tile_size="256"
+  data-mag="20.0"
+  data-mag_levels="[20.0, 10.0, 5.0, 2.5, 1.3333334, 0.6451613, 0.32786885, 0.16393442, 0.08196721, 0.0]"
+  data-level_0_tiles_x="256"
+  data-level_0_tiles_y="256"
+  data-pixel_size_x_microns="0.328574"
+  data-pixel_size_y_microns="0.327033"
+  data-image_width_microns="21533.425664"
+  data-image_height_microns="21432.434688"
+  data-level_scale_factor="2"
+  data-specimen-id="8"
+  data-uuid="e05a756e-3d32-4297-a450-e83394d7c0c8"
+  data-software="CIFv1 -- Original: Zeiss"
+  data-image-server-host="http://nis-develop.coristalab.local:8080"
+*/
+
+      var viewer = griffin.core.start("app", {
+      tiles: {
+        width: 300,
+        height: 300,
+      },
+      tiles: {
+        levels: [20.0, 10.0, 5.0, 2.5, 1.3333334, 0.6451613, 0.32786885, 0.16393442, 0.08196721, 0.0],
+        url: function (zoom, x, y) {
+          return "http://placehold.it/300?text="+x+"-"+y+"-"+zoom;
+        },
+        level_0:  {
+          microns: {x: 256, y: 256},
+          tiles:   {x: 256, y: 256},
+          size:    {x: 512, y: 512}
+        }
+      }});
+      window.on_js_reload = function() {
+        console.log("Reloaded code");
+      };
+    </script>
+  </body>
+</html>

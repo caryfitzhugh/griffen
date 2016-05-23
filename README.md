@@ -7,6 +7,11 @@ Clojurescript / Reagent based alternative to OSD
 * Reagent
 
 Using SVG internally
+SVG may be a better choice than canvas, given the flxeibility (CSS) and
+the fact that larger areas (but less objects) == better performance.
+It also may avoid much of the complicated math..
+http://smus.com/canvas-vs-svg-performance/
+
 
 ## Requirements
 *  Infinitely zoomable with scroll wheel
@@ -15,8 +20,8 @@ Using SVG internally
 *  Events when things move / change
 *  Ellipse / Circle / Line / Marker
 *  Measure (we need to get the actual image sizes, and know the dimensions of things inside the viewer)
-  * http://crashcourse.housegordon.org/D3JS-Absolute-Units.html 
-*  Capture Image
+  * http://crashcourse.housegordon.org/D3JS-Absolute-Units.html
+*  Capture Image (this appears possible with SVG directly (http://pablojs.com/))
 *  Full-Screen
 *  Emits state changes on every change (complete state and diff)
 *  Annotations on / off
@@ -26,7 +31,7 @@ Using SVG internally
 *  Keyboard Shortcuts
   *  Esc - Sets the compass to origin
 *  Match current images / tiles API
-*  
+*
 
 ## Design Goals
 * Simple initialization (function call with an element to fill.
@@ -35,4 +40,3 @@ Using SVG internally
 * Emit changed state with a hash of the current state, + diff. If you need a new full state, we can give it!
 * Simpler testing facility (test things ourselves and provide a clean / simple API)
 * Provide the buttons - but leave it up to CSS to provide the styling.
-

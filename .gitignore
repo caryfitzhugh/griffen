@@ -1,0 +1,6 @@
+*.swp
+*.swo
+profiles.clj
+resources/public/js/*
+target/*
+figwheel_server.log
